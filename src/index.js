@@ -4,7 +4,22 @@ function greetings(...name){
         console.log("Hello, my friend");
     }
     else{
-        console.log("Hello"+ name)
+        if(name.length === 1){
+            console.log("Hello " + name);
+        }
+        else{
+            let message = "Hello ";
+            for(i=0;i<name.length;i++){
+                if(i === name.length - 2){
+                    message = message + name[i] + " and " + name[i+1];
+                    break;
+                }
+                else{
+                    message = message + name[i] + ", ";
+                }
+            }
+            console.log(message);
+        }
     }
 }
 
