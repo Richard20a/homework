@@ -7,4 +7,10 @@ describe("Greetings input handling test", () => {
         greetings();
         expect(console.log).toHaveBeenCalledWith("Hello, my friend");
     });
+    
+    it("Single input: writes the name after the greeting", () => {
+        console.log = jest.fn();
+        greetings("Bob");
+        expect(console.log).toHaveBeenCalledWith("Hello Bob");
+    });
 });
