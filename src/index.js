@@ -1,2 +1,6 @@
 // CODE HERE
-console.log("Hello");
+function greetings(){
+    
+}
+
+module.exports = greetings;
