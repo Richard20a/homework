@@ -7,10 +7,16 @@ describe("Greetings input handling test", () => {
         greetings();
         expect(console.log).toHaveBeenCalledWith("Hello, my friend");
     });
-    
+
     it("Single input: writes the name after the greeting", () => {
         console.log = jest.fn();
         greetings("Bob");
         expect(console.log).toHaveBeenCalledWith("Hello Bob");
     });
+
+    it("Multiple input: same as single input,but separates the names with commas and closes with 'and'", () =>{
+        console.log = jest.fn();
+        greetings("Alice","Bob","Jerry");
+        expect(console.log).toHaveBeenCalledWith("Hello Alice, Bob and Jerry");
+    })
 });
