@@ -20,3 +20,11 @@ describe("Greetings input handling test", () => {
         expect(console.log).toHaveBeenCalledWith("Hello Alice, Bob and Jerry");
     })
 });
+
+describe("Shouting handling test", () => {
+    it("Only shouting input: results a shouting greeting, single input", () => {
+        console.log = jest.fn();
+        greetings("BARRY");
+        expect(console.log).toHaveBeenCalledWith("HELLO BARRY!");
+    })
+})
