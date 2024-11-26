@@ -35,8 +35,9 @@ describe("Shouting handling test", () => {
     });
 
     it("Mixed input: Separates the response into two greetings", () => {
-        console.log() = jest.fn();
+        console.log = jest.fn();
         greetings("JAY","Maya","Alice","BOB","Charlotte");
         expect(console.log).toHaveBeenCalledWith("Hello Maya, Alice and Charlotte. HELLO JAY AND BOB!");
     });
+
 })
