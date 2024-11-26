@@ -5,7 +5,12 @@ function greetings(...name){
     }
     else{
         if(name.length === 1){
-            console.log("Hello " + name);
+            if(name == name.toString().toUpperCase()){
+                console.log("HELLO " + name + "!");
+            }
+            else{
+                console.log("Hello " + name);
+            }
         }
         else{
             let message = "Hello ";
