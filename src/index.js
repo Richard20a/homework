@@ -13,9 +13,23 @@ function greetings(...name){
             }
         }
         else{
-            let message = "Hello ";
-            for(i=0;i<name.length;i++){
-                if(i === name.length - 2){
+            if(name[0] == name[0].toString().toUpperCase()){
+                let message = "HELLO ";
+                for(i=0;i<name.length;i++){
+                    if(i === name.length - 2){
+                       message = message + name[i] + " AND " + name[i+1] + "!";
+                       break;
+                }
+                else{
+                    message = message + name[i] + ", ";
+                }
+            }
+            console.log(message);
+            }
+            else{
+                let message = "Hello ";
+                for(i=0;i<name.length;i++){
+                    if(i === name.length - 2){
                     message = message + name[i] + " and " + name[i+1];
                     break;
                 }
@@ -24,6 +38,7 @@ function greetings(...name){
                 }
             }
             console.log(message);
+            }
         }
     }
 }
