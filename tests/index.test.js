@@ -40,4 +40,12 @@ describe("Shouting handling test", () => {
         expect(console.log).toHaveBeenCalledWith("Hello Maya, Alice and Charlotte. HELLO JAY AND BOB!");
     });
 
-})
+});
+
+describe("Split names with commas", () => {
+    it("Entry contains comma: split it into multiple entries", () => {
+        console.log = jest.fn();
+        greetings("Jerry","Alice, Bob");
+        expect(console.log).toHaveBeenCalledWith("Hello Jerry, Alice and Bob");
+    });
+});
