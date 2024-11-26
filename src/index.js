@@ -13,32 +13,54 @@ function greetings(...name){
             }
         }
         else{
-            if(name[0] == name[0].toString().toUpperCase()){
-                let message = "HELLO ";
-                for(i=0;i<name.length;i++){
-                    if(i === name.length - 2){
-                       message = message + name[i] + " AND " + name[i+1] + "!";
-                       break;
+            const lower = [];
+            const upper = [];
+            let message1 = "";
+            let message2 = "";
+            for(i=0;i<name.length;i++){
+                if(name[i] == name[i].toString().toUpperCase()){
+                    upper.push(name[i]);
                 }
                 else{
-                    message = message + name[i] + ", ";
+                    lower.push(name[i]);
                 }
             }
-            console.log(message);
+
+            if(lower.length === 1){
+                message1 = "Hello " + lower;
             }
-            else{
-                let message = "Hello ";
-                for(i=0;i<name.length;i++){
-                    if(i === name.length - 2){
-                    message = message + name[i] + " and " + name[i+1];
-                    break;
+            else if(lower.length >= 2){
+                message1 = "Hello ";
+                for(i=0;i<lower.length;i++){
+                    if(i === lower.length - 2){
+                        message1 = message1 + lower[i] + " and " + lower[i+1];
+                        if(upper.length != 0){
+                            message1 = message1 + ". ";
+                        }
+                        break;
+                    }
+                    else{
+                        message1 = message1 + lower[i] + ", ";
+                    }
                 }
-                else{
-                    message = message + name[i] + ", ";
+            }
+            
+            if(upper.length === 1){
+                message2 = "HELLO " + upper;
+            }
+            else if(upper.length >= 2){
+                message2 = "HELLO ";
+                for(i=0;i<upper.length;i++){
+                    if(i === upper.length - 2){
+                        message2 = message2 + upper[i] + " AND " + upper[i+1] + "!";
+                        break;
+                    }
+                    else{
+                        message2 = message2 + upper[i] + ", ";
+                    }
                 }
             }
-            console.log(message);
-            }
+            console.log(message1 + message2);
         }
     }
 }
