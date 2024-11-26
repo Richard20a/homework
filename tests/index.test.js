@@ -18,7 +18,7 @@ describe("Greetings input handling test", () => {
         console.log = jest.fn();
         greetings("Alice","Bob","Jerry");
         expect(console.log).toHaveBeenCalledWith("Hello Alice, Bob and Jerry");
-    })
+    });
 });
 
 describe("Shouting handling test", () => {
@@ -26,5 +26,11 @@ describe("Shouting handling test", () => {
         console.log = jest.fn();
         greetings("BARRY");
         expect(console.log).toHaveBeenCalledWith("HELLO BARRY!");
+    });
+
+    it("Only shouting input: results a shouting greeting, multiple input", () => {
+        console.log = jest.fn();
+        greetings("ALICE","BOB","JERRY");
+        expect(console.log).toHaveBeenCalledWith("HELLO ALICE, BOB AND JERRY!");
     })
 })
